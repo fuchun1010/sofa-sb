@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+logging:
+  path: ./logs
+  level:
+    org.springframework.web: trace
+
+spring:
+  application:
+    name: sofa-sb
