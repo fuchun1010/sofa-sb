@@ -10,7 +10,7 @@ import lombok.val;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import static com.tank.spike.constants.UrlPrefix.URL_FOR_ACTIIVE_MEMBERS;
+import static com.tank.spike.constants.UrlPrefix.URL_FOR_ACTIVE_MEMBERS;
 
 /**
  * @author tank198435163.com
@@ -20,7 +20,7 @@ import static com.tank.spike.constants.UrlPrefix.URL_FOR_ACTIIVE_MEMBERS;
 @RequestMapping(UrlPrefix.URL_PREFIX)
 public class MemberCtrl {
 
-  @GetMapping(URL_FOR_ACTIIVE_MEMBERS)
+  @GetMapping(URL_FOR_ACTIVE_MEMBERS)
   public ResponseEntity<ResultApi<ActiveMemberResp>> fetchActiveMembers(@NonNull @PathVariable final String storeCode,
                                                                         @NonNull @PathVariable final String dateStr) {
 
