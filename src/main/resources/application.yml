@@ -9,5 +9,8 @@ logging:
 spring:
   application:
     name: sofa-sb
-  profiles:
-    active: dev
+  redis:
+    database: 1
+    port: 6379
+    host: 127.0.0.1
+    timeout: 5000

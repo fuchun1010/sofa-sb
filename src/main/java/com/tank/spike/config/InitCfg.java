@@ -16,13 +16,12 @@ import javax.validation.constraints.NotNull;
 @Configuration
 public class InitCfg {
 
-  @Bean
-  public RedisTemplate<String, Object> initRedisTemplate(@Autowired @NotNull RedisConnectionFactory redisConnectionFactory) {
-    val serializer = new StringRedisSerializer();
-    val redisTemplate = new RedisTemplate<String, Object>();
+  @Bean("redisTemplate")
+  public RedisTemplate<String, String> initRedisTemplate(@Autowired @NotNull RedisConnectionFactory redisConnectionFactory) {
+    val redisTemplate = new RedisTemplate<String, String>();
     redisTemplate.setConnectionFactory(redisConnectionFactory);
-    redisTemplate.setKeySerializer(serializer);
-    redisTemplate.setValueSerializer(serializer);
+    redisTemplate.setKeySerializer(new StringRedisSerializer());
+    redisTemplate.setValueSerializer(new StringRedisSerializer());
     redisTemplate.setHashKeySerializer(new StringRedisSerializer());
     redisTemplate.setHashValueSerializer(new StringRedisSerializer());
     redisTemplate.afterPropertiesSet();
