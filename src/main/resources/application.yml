@@ -9,3 +9,5 @@ logging:
 spring:
   application:
     name: sofa-sb
+  profiles:
+    active: dev

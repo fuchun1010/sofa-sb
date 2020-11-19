@@ -24,7 +24,7 @@ public class MemberCtrl {
   public ResponseEntity<ResultApi<ActiveMemberResp>> fetchActiveMembers(@NonNull @PathVariable final String storeCode,
                                                                         @NonNull @PathVariable final String dateStr) {
 
-    if (StrUtil.isEmptyIfStr(storeCode) || storeCode.length() < 100) {
+    if (StrUtil.isEmptyIfStr(storeCode)) {
       throw new IllegalArgumentException("storeCode not allowed error");
     }
 
