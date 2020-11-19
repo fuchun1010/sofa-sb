@@ -26,10 +26,17 @@
         <hutool.version>5.3.9</hutool.version>
         <guava.version>23.0</guava.version>
         <vavr.io.version>0.10.2</vavr.io.version>
+        <commons-pool2.version>2.9.0</commons-pool2.version>
     </properties>
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>${commons-pool2.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
