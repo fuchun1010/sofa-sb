@@ -1,9 +1,6 @@
 package com.tank.spike.protocol.resp;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @param <T>
@@ -12,6 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class ResultApi<T> {
 
   public ResultApi(@NonNull final T body) {

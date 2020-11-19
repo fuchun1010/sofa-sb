@@ -4,6 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import com.tank.spike.constants.UrlPrefix;
 import com.tank.spike.protocol.resp.ActiveMemberResp;
 import com.tank.spike.protocol.resp.ResultApi;
+import com.tank.spike.protocol.resp.ResultApiWrapper;
 import lombok.NonNull;
 import lombok.val;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class MemberCtrl {
   public ResponseEntity<ResultApi<ActiveMemberResp>> fetchActiveMembers(@NonNull @PathVariable final String storeCode,
                                                                         @NonNull @PathVariable final String dateStr) {
 
-    if (StrUtil.isEmptyIfStr(storeCode)) {
+    if (StrUtil.isEmptyIfStr(storeCode) || storeCode.length() < 100) {
       throw new IllegalArgumentException("storeCode not allowed error");
     }
 
@@ -33,7 +34,7 @@ public class MemberCtrl {
 
     val activeMemberResp = new ActiveMemberResp();
     activeMemberResp.setMembers(50);
-    val result = new ResultApi<>(activeMemberResp);
+    val result = ResultApiWrapper.payLoad(activeMemberResp);
     return ResponseEntity.ok(result);
 
   }
