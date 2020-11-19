@@ -45,6 +45,8 @@ public class KeyTest extends TestBase {
   }
 
 
+
+
   @Resource(name = "redisTemplate")
   private RedisTemplate<String, String> redisTemplate;
 
