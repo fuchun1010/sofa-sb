@@ -39,6 +39,16 @@ public class StoreModel {
             .collect(Collectors.toCollection(Queues::newArrayDeque));
   }
 
+  @Transient
+  public boolean isEmptyStoreCode() {
+    return StrUtil.isEmptyIfStr(storeCode);
+  }
+
+  @Transient
+  public boolean isEmptyDateStr() {
+    return StrUtil.isEmptyIfStr(this.dateStr);
+  }
+
 
   private String storeCode;
 

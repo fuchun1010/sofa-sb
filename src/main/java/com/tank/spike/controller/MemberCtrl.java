@@ -1,7 +1,7 @@
 package com.tank.spike.controller;
 
-import cn.hutool.core.util.StrUtil;
 import com.tank.spike.constants.UrlPrefix;
+import com.tank.spike.protocol.req.ActiveMemberReq;
 import com.tank.spike.protocol.resp.ActiveMemberResp;
 import com.tank.spike.protocol.resp.ResultApi;
 import com.tank.spike.protocol.resp.ResultApiWrapper;
@@ -20,15 +20,16 @@ import static com.tank.spike.constants.UrlPrefix.URL_FOR_ACTIVE_MEMBERS;
 @RequestMapping(UrlPrefix.URL_PREFIX)
 public class MemberCtrl {
 
-  @GetMapping(URL_FOR_ACTIVE_MEMBERS)
-  public ResponseEntity<ResultApi<ActiveMemberResp>> fetchActiveMembers(@NonNull @PathVariable final String storeCode,
-                                                                        @NonNull @PathVariable final String dateStr) {
+  @PostMapping(URL_FOR_ACTIVE_MEMBERS)
+  public ResponseEntity<ResultApi<ActiveMemberResp>> fetchActiveMembers(@RequestBody @NonNull final ActiveMemberReq activeMemberReq) {
 
-    if (StrUtil.isEmptyIfStr(storeCode)) {
+    val store = activeMemberReq.getStoreModel();
+
+    if (store.isEmptyStoreCode()) {
       throw new IllegalArgumentException("storeCode not allowed error");
     }
 
-    if (StrUtil.isEmptyIfStr(dateStr)) {
+    if (store.isEmptyDateStr()) {
       throw new IllegalArgumentException("dateStr not allowed error");
     }
 
