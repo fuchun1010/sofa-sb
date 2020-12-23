@@ -17,7 +17,7 @@ import java.util.function.Predicate;
  * @author tank198435163.com
  */
 @Component
-public class UrlAnnotationPostProcessor implements BeanPostProcessor, EnvironmentAware {
+public class UrlConfigPostProcessor implements BeanPostProcessor, EnvironmentAware {
 
   @Override
   public void setEnvironment(@NonNull final Environment environment) {
