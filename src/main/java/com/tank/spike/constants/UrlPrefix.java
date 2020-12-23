@@ -9,4 +9,6 @@ public interface UrlPrefix {
 
   String URL_FOR_ACTIVE_MEMBERS = "/store/activeMembers";
 
+  String URL_FOR_GOODS = "/goods/basicinfo";
+
 }
