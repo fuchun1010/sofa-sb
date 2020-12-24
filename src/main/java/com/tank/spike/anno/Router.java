@@ -10,11 +10,13 @@ import java.lang.annotation.*;
 /**
  * @author tank198435163.com
  */
+
 @Documented
 @CrossOrigin
 @RestController
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
+@RequestMapping(UrlPrefix.URL_PREFIX)
 public @interface Router {
   String value();
 }

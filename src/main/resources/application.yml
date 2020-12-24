@@ -19,5 +19,3 @@ spring:
         max-active: 16
         max-idle: 5
 
-url:
-  prefix: /data-union/v1
