@@ -1,6 +1,6 @@
 package com.tank.spike.compoment;
 
-import com.tank.spike.protocol.model.TestBase;
+import com.tank.spike.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

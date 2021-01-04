@@ -4,7 +4,7 @@ import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Sets;
 import com.tank.spike.protocol.model.StoreModel;
-import com.tank.spike.protocol.model.TestBase;
+import com.tank.spike.TestBase;
 import io.vavr.collection.List;
 import io.vavr.collection.Stream;
 import lombok.val;
