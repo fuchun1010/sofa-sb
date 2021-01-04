@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tank.spike.mapper.UserMapper">
+
+    <resultMap id="user" type="com.tank.spike.entity.User">
+        <result column="uid" property="id"/>
+        <result column="uname" property="username"/>
+        <result column="gender" property="gender"/>
+        <result column="job" property="job"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="user">
+        select uid,uname,gender,job from tab_users
+    </select>
+
+</mapper>

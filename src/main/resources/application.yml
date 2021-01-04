@@ -30,3 +30,9 @@ spring:
     password: 123
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.tank.spike.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
