@@ -9,8 +9,13 @@
         <result column="job" property="job"/>
     </resultMap>
 
+    <sql id="tab_users">
+        from tab_users
+    </sql>
+
     <select id="findAll" resultMap="user">
-        select uid,uname,gender,job from tab_users
+        select uid,uname,gender,job
+        <include refid="tab_users"/>
     </select>
 
     <select id="findBy" parameterType="com.tank.spike.entity.User" resultMap="user">
