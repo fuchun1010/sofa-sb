@@ -4,7 +4,7 @@ server:
 logging:
   path: ./logs
   level:
-    org.springframework.web: trace
+    org.springframework.web: info
 
 spring:
   application:
@@ -49,4 +49,7 @@ management:
   endpoint:
     health:
       show-details: always
+    shutdown:
+      enabled: true
+
 
