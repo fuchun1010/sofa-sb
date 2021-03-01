@@ -9,6 +9,8 @@ logging:
     org.springframework.web: info
 
 spring:
+  profiles:
+    active: decode
   application:
     name: sofa-sb
   redis:
@@ -20,24 +22,24 @@ spring:
       pool:
         max-active: 16
         max-idle: 5
-  datasource:
-    hikari:
-      auto-commit: false
-      minimum-idle: 5
-      maximum-pool-size: 64
-      pool-name: SpHikariCP
-      connection-test-query: select 1
-    url: jdbc:mysql://localhost:3307/demo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
-    username: root
-    password: 123
-    driver-class-name: com.mysql.cj.jdbc.Driver
+#  datasource:
+#    hikari:
+#      auto-commit: false
+#      minimum-idle: 5
+#      maximum-pool-size: 64
+#      pool-name: SpHikariCP
+#      connection-test-query: select 1
+#    url: jdbc:mysql://localhost:3307/demo?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+#    username: root
+#    password: 123
+#    driver-class-name: com.mysql.cj.jdbc.Driver
 
 
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.tank.spike.entity
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.tank.spike.entity
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 
 # expose all monitor metrics
