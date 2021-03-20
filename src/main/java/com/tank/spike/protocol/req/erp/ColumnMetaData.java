@@ -2,6 +2,7 @@ package com.tank.spike.protocol.req.erp;
 
 import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Maps;
+import io.vavr.control.Try;
 import lombok.NonNull;
 import lombok.SneakyThrows;
 import lombok.val;
@@ -21,9 +22,9 @@ public class ColumnMetaData {
     this.fieldsMeta = this.init(this.columnsBean);
   }
 
-//  public int index(@NonNull final String fieldName) {
-//    return Try.of(() -> fieldName).map(this.fieldsMeta::get).getOrElse(DEFAULT_ERROR_INDEX);
-//  }
+  public String index(@NonNull final int index) {
+    return Try.of(() -> index).map(this.fieldsMeta::get).getOrElse(DEFAULT_ERROR_INDEX);
+  }
 
   @SneakyThrows
   private Map<Integer, String> init(RawTicketReq.ElementsBean.ColumnsBean columnsBean) {
@@ -46,6 +47,6 @@ public class ColumnMetaData {
 
   private Map<Integer, String> fieldsMeta = null;
 
-  private static final int DEFAULT_ERROR_INDEX = -1;
+  private static final String DEFAULT_ERROR_INDEX = "-";
 
 }
