@@ -18,8 +18,7 @@ import java.util.Objects;
 public class ColumnMetaData {
 
   public ColumnMetaData(@NonNull final RawTicketReq.ElementsBean.ColumnsBean columnsBean) {
-    this.columnsBean = columnsBean;
-    this.fieldsMeta = this.init(this.columnsBean);
+    this.fieldsMeta = this.init(columnsBean);
   }
 
   public String index(@NonNull final int index) {
@@ -43,9 +42,7 @@ public class ColumnMetaData {
   }
 
 
-  private final RawTicketReq.ElementsBean.ColumnsBean columnsBean;
-
-  private Map<Integer, String> fieldsMeta = null;
+  private final Map<Integer, String> fieldsMeta;
 
   private static final String DEFAULT_ERROR_INDEX = "-";
 

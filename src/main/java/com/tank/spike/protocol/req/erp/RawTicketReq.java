@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.beans.Transient;
 import java.util.List;
 
 /**
@@ -38,6 +39,10 @@ public class RawTicketReq {
   private AttributesBean attributes;
   private List<ElementsBean> elements = Lists.newArrayList();
 
+  @Transient
+  public boolean isEmptyElements() {
+    return this.elements.isEmpty();
+  }
 
   /**
    * @author tank198435163.com
