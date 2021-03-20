@@ -11,4 +11,6 @@ public interface UrlPrefix {
 
   String URL_FOR_GOODS = "/goods/basicinfo";
 
+  String URL_FOR_ERP_TICKETS = "/erp/tickets/upload";
+
 }

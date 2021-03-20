@@ -6,7 +6,7 @@ server:
 logging:
   path: ./logs
   level:
-    org.springframework.web: info
+    org.springframework.web: trace
 
 spring:
   application:
