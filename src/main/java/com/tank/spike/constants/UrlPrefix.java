@@ -13,4 +13,6 @@ public interface UrlPrefix {
 
   String URL_FOR_ERP_TICKETS = "/erp/tickets/upload";
 
+  String URL_FOR_DISRUPTOR = "/disruptor";
+
 }
