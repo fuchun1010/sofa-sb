@@ -8,6 +8,7 @@ import com.tank.spike.protocol.req.erp.RawTicketReq;
 import com.tank.spike.protocol.req.erp.Row;
 import lombok.NonNull;
 import lombok.val;
+import strman.Strman;
 
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class TicketWrapper {
         if (!StrUtil.isBlank(value)) {
           cell.setValue(value);
         }
-        cell.setFieldName(fieldName);
+        cell.setFieldName(Strman.toCamelCase(fieldName));
         cell.setIndex(i);
         record.add(cell);
       }

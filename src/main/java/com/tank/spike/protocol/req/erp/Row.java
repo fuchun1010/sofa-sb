@@ -18,5 +18,5 @@ public class Row {
   }
 
   @Getter
-  private List<Cell> cells = Lists.newArrayList();
+  private final List<Cell> cells = Lists.newArrayList();
 }
