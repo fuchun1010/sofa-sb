@@ -15,4 +15,6 @@ public interface UrlPrefix {
 
   String URL_FOR_DISRUPTOR = "/disruptor";
 
+  String URL_ACTIVE_MEMBERS = "/active/members";
+
 }

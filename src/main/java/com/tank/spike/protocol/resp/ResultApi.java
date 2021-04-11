@@ -1,5 +1,6 @@
 package com.tank.spike.protocol.resp;
 
+import com.tank.spike.protocol.code.ResultCode;
 import lombok.*;
 
 /**
@@ -13,8 +14,12 @@ import lombok.*;
 public class ResultApi<T> {
 
   public ResultApi(@NonNull final T body) {
-    this.code = 200;
-    this.message = "ok";
+    this(body, ResultCode.SUCCESS);
+  }
+
+  public ResultApi(@NonNull final T body, ResultCode resultCode) {
+    this.code = resultCode.getType();
+    this.message = resultCode.getMessage();
     this.data = body;
   }
 
