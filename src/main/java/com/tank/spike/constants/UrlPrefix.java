@@ -17,4 +17,6 @@ public interface UrlPrefix {
 
   String URL_ACTIVE_MEMBERS = "/active/members";
 
+  String URL_USERS = "/users";
+
 }
