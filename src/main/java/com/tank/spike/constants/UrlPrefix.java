@@ -19,4 +19,6 @@ public interface UrlPrefix {
 
   String URL_USERS = "/users";
 
+  String URL_FOR_FILE_UPLOAD = "/upload/file";
+
 }
