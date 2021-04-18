@@ -2,6 +2,7 @@ package com.tank.spike.controller;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.extra.ftp.Ftp;
 import com.google.common.collect.Maps;
 import com.tank.spike.anno.Router;
 import com.tank.spike.constants.UrlPrefix;
@@ -19,10 +20,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Map;
 
 /**
@@ -31,6 +34,20 @@ import java.util.Map;
 @Slf4j
 @Router("文件上传下载管理")
 public class FileCtrl {
+
+  @GetMapping("/ftp_upload")
+  public ResultApi<String> uploadFtp() {
+    val path = System.getProperty("user.dir");
+
+    val uploadPath = StrUtil.format("{}/{}/hello.txt", path, "upload");
+
+    val uploadFile = new File(uploadPath);
+    boolean result = false;
+    result = ftp.upload("/test", uploadFile);
+
+    System.out.println("result ----> " + result);
+    return ResultApiWrapper.payLoad("success");
+  }
 
   @SneakyThrows
   @PostMapping(value = UrlPrefix.URL_FOR_FILE_UPLOAD)
@@ -75,5 +92,8 @@ public class FileCtrl {
   private final Map<String, Integer> fileDirCache = Maps.newConcurrentMap();
 
   private final byte[] lock = new byte[1];
+
+  @Resource
+  private Ftp ftp;
 
 }

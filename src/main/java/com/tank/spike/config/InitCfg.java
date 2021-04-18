@@ -1,5 +1,7 @@
 package com.tank.spike.config;
 
+import cn.hutool.extra.ftp.Ftp;
+import cn.hutool.extra.ftp.FtpMode;
 import com.lmax.disruptor.YieldingWaitStrategy;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
@@ -58,4 +60,16 @@ public class InitCfg {
   public <T> EventProducerDef<T> initProducer(@Autowired @Qualifier("disruptor") Disruptor<Event<T>> disruptor) {
     return new EventProducerDef<>(disruptor.getRingBuffer());
   }
+
+
+  @Bean
+  public Ftp initFtp() {
+    val ftp = new Ftp("127.0.0.1", 21, "myuser", "mypass");
+    ftp.setMode(FtpMode.Passive);
+    ftp.setBackToPwd(true);
+    ftp.cd("/test");
+    return ftp;
+  }
+
+
 }

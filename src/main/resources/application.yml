@@ -60,3 +60,8 @@ management:
       enabled: true
 
 
+ftp:
+  username: myuser
+  password: mypass
+  host: localhost
+  port: 21
