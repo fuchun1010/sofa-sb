@@ -21,4 +21,6 @@ public interface UrlPrefix {
 
   String URL_FOR_FILE_UPLOAD = "/upload/file";
 
+  String URL_FOR_FILE_DOWNLOAD = "/download/file/{name}";
+
 }
