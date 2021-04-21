@@ -6,14 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import java.io.Serializable;
-
+/**
+ * @author tank198435163.com
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class ApplicantRes implements Serializable {
+public class ApplicantRes {
 
   private String checkResult;
 }

@@ -77,8 +77,8 @@ jetcache:
     default:
       type: redis.lettuce
       keyConvertor: fastjson
-      valueEncoder: java
-      valueDecoder: java
+      valueEncoder: kryo
+      valueDecoder: kryo
       poolConfig:
         minIdle: 5
         maxIdle: 20

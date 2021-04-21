@@ -3,6 +3,7 @@ package com.tank.spike.controller;
 import com.alicp.jetcache.Cache;
 import com.alicp.jetcache.anno.Cached;
 import com.alicp.jetcache.anno.CreateCache;
+import com.alicp.jetcache.anno.SerialPolicy;
 import com.tank.spike.anno.ResponseWrapper;
 import com.tank.spike.anno.Router;
 import com.tank.spike.protocol.req.simple.ApplicantReq;
@@ -40,7 +41,10 @@ public class CacheCtrl {
     return ((ApplicantRes) result);
   }
 
-  @CreateCache(expire = 10, timeUnit = TimeUnit.MINUTES, localLimit = 100, name = "global-")
+  @CreateCache(expire = 10,
+          timeUnit = TimeUnit.MINUTES,
+          localLimit = 100,
+          name = "global-", serialPolicy = SerialPolicy.KRYO)
   private Cache<Integer, Object> applicantResCache;
 
 
