@@ -17,3 +17,10 @@ curl -XPOST -H "Content-Type:multipart/form-data" -F "file=@/Users/tank198435163
 ```shell script
 curl -XGET  "http://localhost:8081/data-union/v1/download/file/hello.txt" --output test.txt
 ```
+
+
+#### start with external lib
+
+```shell script
+java -Dloader.path=\lib -jar sofa-demo-1.0-SNAPSHOT.jar
+```
